@@ -1,0 +1,42 @@
+STAGE 2: Model Architecture & Evaluation
+
+    Học không giám sát & Giảm chiều dữ liệu (PCA)
+    Phân khúc khách hàng / Phân cụm (K-Means)
+    Học có giám sát: Bài toán hồi quy (Regression Tasks)
+    Học có giám sát: Bài toán phân lớp (Classification Tasks)
+
+---
+1. Unsupervised Learning & Dimensionality Reduction (PCA)
+
+    Dimensionality reduction via PCA: Target high-dimensional spaces -> project data into orthogonal, independent components.
+    Pre-requisite: Features must be scaled (use StandardScaler or MinMaxScaler) -> PCA is highly sensitive to the scale of data variance.
+    Component Selection: Compute the Cumulative Explained Variance Ratio -> select the minimum number of components required to retain 85% to 95% of the original variance.
+    Output: Transformed matrix (Principal Components) used for visualization (2D/3D scatter plot) or as input features for downstream models.
+
+2. Customer Segmentation / Clustering (K-Means)
+
+    Clustering mechanism: Group similar data points together based on a spatial distance metric (Euclidean distance).
+    Hyperparameter Selection (K clusters):
+        Elbow Method: Plot WCSS (Within-Cluster Sum of Squares) -> locate the optimal "inflection point" or elbow.
+        Silhouette Analysis: Measure cluster separation score (ranges from -1 to 1) -> maximize the average silhouette score.
+    Execution: Fit K-Means on PCA-reduced data vs. the original unreduced data -> compare clustering quality and feature interpretability.
+
+3. Supervised Learning: Regression Tasks (Predicting Values)
+
+    Goal: Continuous numerical target estimation (e.g., forecasting revenue, prices, or product quantities).
+    Algorithms:
+        Linear Regression: Parametric model -> relies on Weights (W) and Bias (b), optimized via Gradient Descent or OLS.
+        Decision Tree Regressor: Non-parametric model -> splits data nodes sequentially based on variance reduction.
+    Evaluation Metrics: Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and R-squared (R2) Score.
+    Diagnostic: Residual plots -> check for heteroscedasticity or structural patterns in prediction errors.
+
+4. Supervised Learning: Classification Tasks (Predicting Groups)
+
+    Goal: Discrete categorical target assignment (e.g., Customer Churn vs. Active, Multi-class labels).
+    Algorithms:
+        Logistic Regression: Parametric model -> maps linear combinations to probability scores via the Sigmoid activation function.
+        Decision Tree Classifier: Non-parametric model -> splits nodes to maximize information gain by minimizing Gini Impurity or Entropy.
+    Evaluation Metrics:
+        Confusion Matrix: Visual layout displaying True/False Positives and Negatives.
+        Classification Report: Precision, Recall, Accuracy, and F1-Score (essential for benchmarking imbalanced target classes).
+

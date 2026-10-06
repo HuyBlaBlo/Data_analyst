@@ -50,3 +50,16 @@ Seaborn (import seaborn as sns)
     Facets: relplot / catplot (col, row)
     Theme: sns.set_theme()
     Use when: fast EDA; still use ax / plt for polish and saving
+
+    dữ liệu không đồng bộ thì sa
+    xem mức độ tương quang
+    coi mức độ tương quang
+
+    cần chú ý về đục lổ trong các bài kiểm tra bài tập làm thêm 
+     trong bbuowcs define the question: có nhiêu câu hỏi để đặt ra
+
+     concat là dùng ignore_index là để reset index
+
+     merge
+
+
